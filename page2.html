@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marlon - Web Designer Portfolio</title>
+    <title>ジェッド - ウェブフロントとゲーム制作ポートフォリオ</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Base Styles */
@@ -15,7 +15,7 @@
         }
 
         :root {
-            --primary-color: #4070F4;
+            --primary-color: #b547ff;
             --secondary-color: #0E2431;
             --light-color: #ffffff;
             --dark-color: #333333;
@@ -82,7 +82,7 @@
         }
 
         .btn:hover {
-            background-color: #3058d4;
+            background-color: #9a3ad4;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -327,6 +327,8 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
+            position: relative;
+            height: 200px; /* Fixed height for all items */
         }
 
         .work-item:hover {
@@ -335,13 +337,50 @@
 
         .work-item img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 100%; /* Fill the container */
+            object-fit: cover; /* Ensure image covers entire area */
             transition: transform 0.5s ease;
         }
 
         .work-item:hover img {
             transform: scale(1.1);
+        }
+
+        /* YouTube Video Styles */
+        .youtube-container {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Fill the container */
+            overflow: hidden;
+        }
+
+        .youtube-container iframe {
+            width: 100%;
+            height: 100%; /* Fill the container */
+            border: none;
+            pointer-events: auto;
+        }
+
+        /* Video overlay to prevent scroll capture */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            cursor: pointer;
+            /* Make overlay invisible but still functional */
+            background: transparent;
+        }
+
+        .video-overlay.scroll-only {
+            /* This class makes the overlay only capture scroll events */
+            pointer-events: none;
+        }
+
+        .video-overlay.scroll-only:hover {
+            pointer-events: auto;
         }
 
         /* Contact Section */
@@ -516,7 +555,7 @@
         <div class="container">
             <nav class="navbar">
                 <div>
-                    <a href="#" class="logo">Marlon</a>
+                    <a href="#" class="logo">ジェッド</a>
                 </div>
 
                 <div class="nav-menu" id="nav-menu">
@@ -541,17 +580,17 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="home-title reveal">Hi, I'm <span class="highlight">Marlon</span><br>Web Designer</h1>
-                    <p class="reveal">I create beautiful, functional websites that deliver exceptional user experiences. Let's bring your ideas to life!</p>
-                    <a href="#contact" class="btn button reveal">Contact Me</a>
+                    <h1 class="home-title reveal">初めまして, <span class="highlight">ジェッドと申します。</span><br>ウェブフロントとゲーム制作</h1>
+                    <p class="reveal">没入感のあるゲーム、洗練されたウェブサイト、革新的なITソリューションを創り、卓越した体験をお届けします。貴方のビジョンを共に実現いたしましょう。</p>
+                    <a href="#contact" class="btn button reveal">お問い合わせ</a>
                     <div class="social-links home-social">
+                        <a href="#" class="reveal"><i class='bx bxl-youtube'></i></a>
                         <a href="#" class="reveal"><i class='bx bxl-linkedin'></i></a>
-                        <a href="#" class="reveal"><i class='bx bxl-instagram'></i></a>
                         <a href="#" class="reveal"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
                 <div class="hero-image home-img">
-                    <img src="https://i.postimg.cc/65sT6Z3M/perfil.png" alt="Marlon" class="reveal">
+                    <img src="https://i.postimg.cc/8zFdhB0g/Photo-Final.jpg" alt="Ged" class="reveal">
                 </div>
             </div>
         </div>
@@ -561,17 +600,17 @@
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Me</h2>
+                <h2>自己紹介</h2>
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://i.postimg.cc/NjdgX2sq/about.jpg" alt="About Marlon" class="about-img reveal">
+                    <img src="https://i.postimg.cc/8zFdhB0g/Photo-Final.jpg" alt="About Ged" class="about-img reveal">
                 </div>
                 <div class="about-text">
-                    <h3 class="about-subtitle reveal">I'm Marlon</h3>
-                    <p class="about-text reveal">As a passionate web designer, I thrive on creating visually appealing and user-friendly websites. My journey in web design began with a fascination for how design can enhance user experience.</p>
-                    <p class="about-text reveal">I believe that great design is not just about aesthetics but also about functionality and usability. Every project I undertake is approached with attention to detail and a commitment to delivering the best possible results.</p>
-                    <p class="about-text reveal">When I'm not designing, you can find me exploring new design trends, learning new technologies, or enjoying a good cup of coffee while sketching out new ideas.</p>
+                    <h3 class="about-subtitle reveal">ジェッドと申します</h3>
+                    <p class="about-text reveal">日本文化とビデオゲームへの深い愛情から、IT分野への情熱が芽生えました。これらの体験が、創造性と技術を融合させる道を歩むきっかけとなりました。</p>
+                    <p class="about-text reveal">私の仕事は常に正確さと卓越性へのこだわりを基盤としています。インターフェースに限らず、システム開発やゲーム制作など、幅広い分野で細部にまで注意を払い、最良の成果を目指しています。</p>
+                    <p class="about-text reveal">日々、新しい技術やデザインの潮流を学びながら、ITソリューションの可能性を探求しています。新しいアイデアを形にすることを楽しみ、常に自己成長を目指しています。</p>
                 </div>
             </div>
         </div>
@@ -581,25 +620,16 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="section-title">
-                <h2>My Skills</h2>
+                <h2>スキル</h2>
             </div>
             <div class="skills-content">
                 <div class="skills-text">
-                    <h3 class="skills-subtitle reveal">Professional Skills</h3>
-                    <p class="skills-text reveal">I love to think outside the box and bring unique ideas to life through design. My proficiency in HTML, CSS, and JavaScript ensures that my designs are not only beautiful but also functional.</p>
+                    <h3 class="skills-subtitle reveal">専門技術</h3>
+                    <p class="skills-text reveal">困難に直面しても諦めず、最後まで解決に取り組む姿勢を大切にしています。課題を一つひとつ乗り越えることで成長し、より良い成果を生み出すことを目指しています。</p>
                     <div class="skills-list">
                         <div class="skill-item skills-data reveal">
                             <div class="skill-header">
-                                <span class="skill-name">HTML5</span>
-                                <span class="skill-percentage">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item skills-data reveal">
-                            <div class="skill-header">
-                                <span class="skill-name">CSS3</span>
+                                <span class="skill-name">HTML/CSS</span>
                                 <span class="skill-percentage">85%</span>
                             </div>
                             <div class="skill-bar">
@@ -608,7 +638,16 @@
                         </div>
                         <div class="skill-item skills-data reveal">
                             <div class="skill-header">
-                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-name">ユニティ/C#</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item skills-data reveal">
+                            <div class="skill-header">
+                                <span class="skill-name">バックエンド</span>
                                 <span class="skill-percentage">65%</span>
                             </div>
                             <div class="skill-bar">
@@ -617,17 +656,17 @@
                         </div>
                         <div class="skill-item skills-data reveal">
                             <div class="skill-header">
-                                <span class="skill-name">UX/UI Design</span>
-                                <span class="skill-percentage">85%</span>
+                                <span class="skill-name">アンリアルエンジン 5</span>
+                                <span class="skill-percentage">80%</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
+                                <div class="skill-progress" data-width="80"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="skills-image">
-                    <img src="https://i.postimg.cc/52LWbPyt/work3.jpg" alt="Skills" class="skills-img reveal">
+                    <img src="https://i.postimg.cc/7hdM5Kyf/Cemetary-Game.png" alt="Skills" class="skills-img reveal">
                 </div>
             </div>
         </div>
@@ -637,26 +676,68 @@
     <section class="work" id="work">
         <div class="container">
             <div class="section-title">
-                <h2>My Work</h2>
+                <h2>成果物</h2>
             </div>
             <div class="work-grid">
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/NM0n9bsm/work1.jpg" alt="Project 1">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/hD1ntCyJYiA" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/tJZmDTVg/work2.jpg" alt="Project 2">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/e6pjd_fuzks" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/52LWbPyt/work3.jpg" alt="Project 3">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/gurvTWxU4OY" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/fW1wsSCB/work4.jpg" alt="Project 4">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/jTPb42SsxQE" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/m2MTgZ6R/work5.jpg" alt="Project 5">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/pLLk8OAf9_w" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
                 <div class="work-item work-img reveal">
-                    <img src="https://i.postimg.cc/Qd3h9LR7/work6.jpg" alt="Project 6">
+                    <div class="youtube-container">
+                        <div class="video-overlay scroll-only"></div>
+                        <iframe src="https://www.youtube.com/embed/ftz-sFIWRTY" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -666,20 +747,20 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Me</h2>
+                <h2>コンタクト</h2>
             </div>
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
-                        <input type="text" class="form-control contact-input reveal" placeholder="Your Name" required>
+                        <input type="text" class="form-control contact-input reveal" placeholder="名前" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control contact-input reveal" placeholder="Your Email" required>
+                        <input type="email" class="form-control contact-input reveal" placeholder="メール" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control contact-input reveal" placeholder="Your Message" required></textarea>
+                        <textarea class="form-control contact-input reveal" placeholder="メッセージ内容" required></textarea>
                     </div>
-                    <button type="submit" class="btn submit-btn">Send Message</button>
+                    <button type="submit" class="btn submit-btn">送信</button>
                 </form>
             </div>
         </div>
@@ -689,7 +770,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Marlon</div>
+                <div class="footer-logo">ジェッド</div>
                 <div class="footer-social">
                     <a href="#"><i class='bx bxl-facebook'></i></a>
                     <a href="#"><i class='bx bxl-instagram'></i></a>
@@ -697,7 +778,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Marlon. All rights reserved.</p>
+                <p>&copy; 2025 Ged. 全著作権所有。</p>
             </div>
         </div>
     </footer>
@@ -798,6 +879,43 @@
             });
         }
 
+        // Video scroll fix - improved version
+        function initVideoScrollFix() {
+            const videoOverlays = document.querySelectorAll('.video-overlay');
+            
+            videoOverlays.forEach(overlay => {
+                let isScrolling = false;
+                let scrollTimer;
+                
+                // Only capture scroll events, not click events
+                overlay.addEventListener('wheel', function(e) {
+                    // Prevent default scroll behavior on the video
+                    e.preventDefault();
+                    
+                    // Scroll the page instead
+                    window.scrollBy({
+                        top: e.deltaY,
+                        behavior: 'auto'
+                    });
+                    
+                    // Set scrolling flag
+                    isScrolling = true;
+                    clearTimeout(scrollTimer);
+                    
+                    // Reset scrolling flag after scrolling stops
+                    scrollTimer = setTimeout(() => {
+                        isScrolling = false;
+                    }, 500);
+                });
+                
+                // For touch devices
+                overlay.addEventListener('touchmove', function(e) {
+                    // Allow touch events to pass through to the page
+                    // This prevents the video from capturing touch scroll events
+                });
+            });
+        }
+
         // Event listeners
         window.addEventListener('scroll', function() {
             scrollReveal();
@@ -810,6 +928,7 @@
             scrollReveal();
             animateSkillBars();
             setActiveNavLink();
+            initVideoScrollFix();
         });
     </script>
 </body>

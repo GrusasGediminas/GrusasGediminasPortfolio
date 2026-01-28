@@ -313,29 +313,29 @@
             opacity: 0.7;
         }
 
-        /* Games Section Styles */
+        /* Updated Games Section Styles */
         .games-section {
             background-color: var(--gray-color);
         }
 
         .games-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .games-content {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 80px;
         }
 
         .game-item {
             text-align: center;
             background: white;
             border-radius: 10px;
-            padding: 30px;
+            padding: 40px;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease;
-            max-width: 600px;
             width: 100%;
         }
 
@@ -349,61 +349,78 @@
             color: inherit;
         }
 
-        .game-image {
-            margin-bottom: 25px;
-            overflow: hidden;
-            border-radius: 8px;
+        /* Game Images - Original Size */
+        .game-images {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 35px;
+            align-items: center;
         }
 
-        .game-item img {
+        .game-image-full {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
 
-        .game-item:hover img {
-            transform: scale(1.05);
+        .game-image-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .game-item:hover .game-image-full img {
+            transform: scale(1.03);
         }
 
         .game-title {
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 700;
             color: var(--secondary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
         }
 
         .game-description {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--secondary-color);
-            opacity: 0.8;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: left;
+            padding: 0 10px;
         }
 
         .game-link {
             display: inline-flex;
             align-items: center;
-            padding: 12px 30px;
+            padding: 15px 40px;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
+            border-radius: 8px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-top: 20px;
         }
 
         .game-link:hover {
             background-color: #9a3ad4;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(181, 71, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(181, 71, 255, 0.4);
         }
 
         .game-link i {
-            margin-right: 10px;
-            font-size: 1.2rem;
+            margin-right: 12px;
+            font-size: 1.3rem;
         }
 
         .skills-content {
@@ -814,6 +831,10 @@
             .rirekusho-images {
                 grid-template-columns: 1fr;
             }
+            
+            .game-images {
+                gap: 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -860,11 +881,16 @@
             }
             
             .game-item {
-                padding: 20px;
+                padding: 25px 20px;
             }
             
             .game-title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+            
+            .game-description {
+                font-size: 1.1rem;
+                padding: 0 5px;
             }
         }
 
@@ -893,6 +919,14 @@
             .clickquest-icon, .valheim-icon {
                 margin-right: 0;
                 margin-bottom: 10px;
+            }
+            
+            .game-title {
+                font-size: 1.6rem;
+            }
+            
+            .game-description {
+                font-size: 1rem;
             }
         }
 
@@ -1026,16 +1060,52 @@
             </div>
             <div class="games-container">
                 <div class="games-content">
+                    <!-- Game 1: Final Refuel -->
                     <div class="game-item reveal">
-                        <a href="YOUR_GAME_LINK_HERE" target="_blank">
-                            <div class="game-image">
-                                <img src="https://i.postimg.cc/8P8GMjZC/Final-Refuel-Image.jpg" alt="Final Refuel Game">
+                        <a href="https://grusasgediminas.itch.io/finalrefuelshuushokudemo" target="_blank">
+                            <!-- Game Images - Full Size -->
+                            <div class="game-images">
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/cL30PsWd/Game1Image.jpg" alt="Final Refuel Game Screenshot 1">
+                                </div>
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/9FYQfmSx/Game1Image2.jpg" alt="Final Refuel Game Screenshot 2">
+                                </div>
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/jjX5ks6z/Game1Image3.jpg" alt="Final Refuel Game Screenshot 3">
+                                </div>
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/Kjdvg4FZ/Game1Image4.jpg" alt="Final Refuel Game Screenshot 4">
+                                </div>
                             </div>
+                            
                             <h3 class="game-title">Final Refuel</h3>
-                            <p class="game-description">燃料が限られ、多くの障害物が存在する危険な宇宙環境で生き残りを競う、緊迫感あふれる2D宇宙飛行ゲームです。GameManager、SoundManager、Cinemachine、その他多くのゲームオブジェクトをシームレスに統合し、スムーズでシームレスな動作を実現するよう、プロフェッショナルなコードが開発されています。</p>
+                            <p class="game-description">現在開発中のゲームは、燃料が限られ、多くの障害物が存在する危険な宇宙環境でのサバイバルをテーマとしています。GameManager、SoundManager、Cinemachine、その他多くのゲームオブジェクトをシームレスに統合し、スムーズでシームレスな体験を実現するよう、プロフェッショナルなコーディングが施されています。これは、就職活動に向けて、初めて完成度の高い本格的なゲームを発表するための最新プロジェクトです。完成次第、Steamで正式リリースする予定です。</p>
                             <div class="game-link">
                                 <i class='bx bx-play-circle'></i>
-                                Steamリンク
+                                プレイする
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Game 2: SpeedStar -->
+                    <div class="game-item reveal">
+                        <a href="https://grusasgediminas.itch.io/speedstar" target="_blank">
+                            <!-- Game Images - Full Size -->
+                            <div class="game-images">
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/sDkRYth4/Game2Image.jpg" alt="SpeedStar Game Screenshot 1">
+                                </div>
+                                <div class="game-image-full">
+                                    <img src="https://i.postimg.cc/nh543Gk2/Game2Image2.jpg" alt="SpeedStar Game Screenshot 2">
+                                </div>
+                            </div>
+                            
+                            <h3 class="game-title">SpeedStar</h3>
+                            <p class="game-description">これは、学校のチームワークプログラムの一環として行われた小規模な練習プロジェクトです。基本的なゲームメカニクス、操作システム、UIデザインの実装を通して、ゲーム開発の基礎を学びました。プロジェクト完了までわずか3回のセッションでしたが、これほど短期間で実際に機能するPvPゲームを制作できたことを誇りに思います。</p>
+                            <div class="game-link">
+                                <i class='bx bx-play-circle'></i>
+                                プレイする
                             </div>
                         </a>
                     </div>

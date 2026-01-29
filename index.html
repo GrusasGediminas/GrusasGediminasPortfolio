@@ -497,74 +497,32 @@
             margin: 0 auto;
         }
 
-        .rirekusho-single-image {
+        .rirekusho-display {
             text-align: center;
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            margin-bottom: 30px;
         }
 
-        .rirekusho-single-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .rirekusho-single-image a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .rirekusho-single-image img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
+        .rirekusho-image-link {
+            display: inline-block;
+            transition: all 0.3s ease;
+            max-width: 100%;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            image-rendering: -webkit-optimize-contrast;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .rirekusho-image-link:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .rirekusho-image {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            display: block;
+            border-radius: 8px;
             image-rendering: crisp-edges;
-            transition: transform 0.3s ease;
-        }
-
-        .rirekusho-single-image:hover img {
-            transform: scale(1.02);
-        }
-
-        .rirekusho-caption {
-            margin-top: 15px;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .rirekusho-additional-info {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            margin-top: 30px;
-        }
-
-        .rirekusho-additional-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--gray-color);
-            font-size: 1.8rem;
-        }
-
-        .rirekusho-additional-info h4 {
-            color: var(--secondary-color);
-            margin: 25px 0 10px 0;
-            font-size: 1.3rem;
-        }
-
-        .rirekusho-additional-info p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 1.1rem;
+            image-rendering: -webkit-optimize-contrast;
         }
 
         .websites-section {
@@ -810,14 +768,14 @@
                 gap: 20px;
             }
             
-            .rirekusho-single-image img {
-                max-width: 600px;
+            .rirekusho-image {
+                max-width: 800px;
             }
         }
 
         @media (max-width: 768px) {
             .nav-toggle {
-                display: block;
+                display: none;
             }
 
             .nav-links {
@@ -875,28 +833,8 @@
                 height: 180px;
             }
             
-            .rirekusho-single-image {
-                padding: 20px;
-            }
-            
-            .rirekusho-single-image img {
+            .rirekusho-image {
                 max-width: 100%;
-            }
-            
-            .rirekusho-additional-info {
-                padding: 20px;
-            }
-            
-            .rirekusho-additional-info h3 {
-                font-size: 1.5rem;
-            }
-            
-            .rirekusho-additional-info h4 {
-                font-size: 1.2rem;
-            }
-            
-            .rirekusho-additional-info p {
-                font-size: 1rem;
             }
         }
 
@@ -926,10 +864,6 @@
             }
             
             .game-description {
-                font-size: 1rem;
-            }
-            
-            .rirekusho-caption {
                 font-size: 1rem;
             }
         }
@@ -981,11 +915,9 @@
                     <p class="reveal">没入感のあるゲーム、洗練されたウェブサイト、革新的なITソリューションを創り、卓越した体験をお届けします。貴方のビジョンを共に実現いたしましょう。</p>
                     <a href="#contact" class="btn button reveal">お問い合わせ</a>
                     <div class="social-links home-social">
-                        <!-- target="_blank"を追加 -->
                         <a href="https://www.youtube.com/@Tade22503" target="_blank" class="reveal">
                             <i class='bx bxl-youtube'></i>
                         </a>
-                        <!-- GitHubリンクにもtarget="_blank"を追加 -->
                         <a href="https://github.com/GrusasGediminas" target="_blank" class="reveal">
                             <i class='bx bxl-github'></i>
                         </a>
@@ -1247,13 +1179,14 @@
                 <h2>履歴書</h2>
             </div>
             <div class="rirekusho-container">
-                <div class="rirekusho-single-image reveal">
-                    <a href="https://postimg.cc/mP9y7zfR" target="_blank">
-                        <img src="https://i.postimg.cc/XYH1SdsZ/Grusas-Gediminas-lu-li-shu-dong-jingkurujapan-akademi-2026.png" alt="履歴書">
+                <div class="rirekusho-display reveal">
+                    <!-- CHANGED: This link now opens Page2.html in a new tab -->
+                    <a href="Page2.html" target="_blank" class="rirekusho-image-link">
+                        <img src="https://i.postimg.cc/XYH1SdsZ/Grusas-Gediminas-lu-li-shu-dong-jingkurujapan-akademi-2026.png" 
+                             alt="履歴書" 
+                             class="rirekusho-image">
                     </a>
-                    <p class="rirekusho-caption">履歴書 (クリックで拡大表示)</p>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -1323,11 +1256,9 @@
             <div class="footer-content">
                 <div class="footer-logo">ジェッド</div>
                 <div class="footer-social">
-                    <!-- target="_blank"を追加、revealクラスを削除 -->
                     <a href="https://www.youtube.com/@Tade22503" target="_blank">
                         <i class='bx bxl-youtube'></i>
                     </a>
-                    <!-- target="_blank"を追加 -->
                     <a href="https://github.com/GrusasGediminas" target="_blank">
                         <i class='bx bxl-github'></i>
                     </a>

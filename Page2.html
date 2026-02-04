@@ -20,6 +20,8 @@
         let offsetY = 20;
         let isDragging = false;
         let lastX, lastY;
+        let initialDistance = 0;
+        let initialScale = 1;
         const img = document.getElementById('cvImage');
         const container = document.getElementById('imageContainer');
         
@@ -94,28 +96,59 @@
                 lastY = e.touches[0].clientY;
                 container.style.cursor = 'grabbing';
                 e.preventDefault();
+            } else if (e.touches.length === 2) {
+                isDragging = false;
+                initialDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                initialScale = scale;
+                e.preventDefault();
             }
         });
         
         container.addEventListener('touchmove', function(e) {
-            if (!isDragging || e.touches.length !== 1) return;
-            
-            const deltaX = e.touches[0].clientX - lastX;
-            const deltaY = e.touches[0].clientY - lastY;
-            
-            offsetX += deltaX;
-            offsetY += deltaY;
-            
-            lastX = e.touches[0].clientX;
-            lastY = e.touches[0].clientY;
-            
-            updateTransform();
-            e.preventDefault();
+            if (e.touches.length === 1 && isDragging) {
+                const deltaX = e.touches[0].clientX - lastX;
+                const deltaY = e.touches[0].clientY - lastY;
+                
+                offsetX += deltaX;
+                offsetY += deltaY;
+                
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+                
+                updateTransform();
+                e.preventDefault();
+            } else if (e.touches.length === 2) {
+                isDragging = false;
+                
+                const currentDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                
+                if (initialDistance > 0) {
+                    const scaleFactor = currentDistance / initialDistance;
+                    scale = Math.max(0.5, Math.min(5.0, initialScale * scaleFactor));
+                    updateTransform();
+                }
+                
+                e.preventDefault();
+            }
         });
         
-        container.addEventListener('touchend', function() {
-            isDragging = false;
-            container.style.cursor = 'grab';
+        container.addEventListener('touchend', function(e) {
+            if (e.touches.length === 0) {
+                isDragging = false;
+                initialDistance = 0;
+                container.style.cursor = 'grab';
+            } else if (e.touches.length === 1) {
+                isDragging = true;
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+                initialDistance = 0;
+            }
         });
         
         container.addEventListener('dblclick', function() {

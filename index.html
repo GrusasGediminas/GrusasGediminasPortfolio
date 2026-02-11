@@ -265,6 +265,12 @@
             .game-title { font-size: 1.6rem; }
             .game-description { font-size: 1rem; }
         }
+
+            @media print {
+            .games-section {
+                page-break-before: always;
+            }
+        }
     </style>
 </head>
 <body>

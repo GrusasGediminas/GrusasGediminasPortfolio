@@ -222,6 +222,20 @@
         /* .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); } */
 
+        @media print {
+            .games-section {
+                page-break-before: always !important;
+                margin-top: 40px !important;
+            }
+            section {
+                page-break-inside: avoid;
+            }
+            .hero {
+                min-height: auto !important;
+                padding-top: 60px !important;
+            }
+        }
+
         @media (max-width: 1200px) { .hero-text h1 { font-size: 2.3rem; } }
         @media (max-width: 992px) {
             .hero-content, .about-content, .skills-content { grid-template-columns: 1fr; }
@@ -258,11 +272,6 @@
             .website-image { height: 160px; }
             .game-title { font-size: 1.6rem; }
             .game-description { font-size: 1rem; }
-        }
-        @media print {
-            .games-section {
-            page-break-before: always;
-            }
         }
     </style>
 </head>
